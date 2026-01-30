@@ -208,15 +208,41 @@ body { font-family: 'Roboto', sans-serif; }
 }
 
 .footer {
-    background: #961E05;
-    color: white;
-    padding: 30px 0;
+  background-color: #1a1a1a;     /* ou a cor escura que você já usa */
+  color: #ffffff;
+  padding: 2.5rem 1rem;
+  border-top: 1px solid #333;    /* opcional: uma linha separadora em cima */
+}
+
+.social-icons {
+  font-size: 2.1rem;             /* tamanho dos ícones – diminua para 1.8rem se achar grande */
 }
 
 .social-icons a {
-    color: white;
-    font-size: 26px;
-    margin: 0 10px;
+  color: #ffffff;
+  margin: 0 1rem;                /* espaço entre os ícones */
+  transition: color 0.3s ease, transform 0.2s ease;
+  text-decoration: none;
+}
+
+.social-icons a:hover {
+  color: #e74c3c;
+  transform: scale(1.15);
+}
+
+.footer p {
+  margin: 0.5rem 0;
+  line-height: 1.4;
+}
+
+.footer a {
+  color: #ffffff;
+  transition: color 0.3s ease;
+}
+
+.footer a:hover {
+  color: #e74c3c;
+  text-decoration: underline;
 }
 
 /* TEXTURA DE MADEIRA - CANTINA ITALIANA */
@@ -479,13 +505,31 @@ body { font-family: 'Roboto', sans-serif; }
 </div>
 </section>
 
-<footer class="footer text-center">
-<p>Pizzaria Del Col<sup>&reg;</sup> – Todos os direitos reservados</p>
-  <p>Desenvolvido por <a href="https://crashcom.com.br" target="_blank" rel="noopener noreferrer" style="color: #e74c3c; text-decoration: none;">Crash Comunicação</a></p>
-<div class="social-icons">
-<a href="https://www.facebook.com/pizzariafamiliadelcol" target="_blank"><i class="bi bi-facebook"></i></a>
-<a href="https://www.instagram.com/delcolpizzaria/" target="_blank"><i class="bi bi-instagram"></i></a>
-</div>
+<footer class="footer text-center py-4">
+  <div class="container">
+    <!-- Redes sociais no topo - centralizadas -->
+    <div class="social-icons d-flex justify-content-center gap-5 mb-4">
+      <a href="https://www.facebook.com/pizzariafamiliadelcol" target="_blank" aria-label="Facebook">
+        <i class="bi bi-facebook"></i>
+      </a>
+      <a href="https://www.instagram.com/delcolpizzaria/" target="_blank" aria-label="Instagram">
+        <i class="bi bi-instagram"></i>
+      </a>
+    </div>
+
+    <!-- Nome da pizzaria - centralizado -->
+    <p class="mb-2 fs-5 fw-bold">
+      Pizzaria Del Col<sup>®</sup> – Todos os direitos reservados
+    </p>
+
+    <!-- Desenvolvido por - centralizado e em branco -->
+    <p class="mb-0" style="font-size: 0.95rem; color: #ffffff;">
+      Desenvolvido por 
+      <a href="https://crashcom.com.br" target="_blank" rel="noopener noreferrer" style="color: #ffffff; text-decoration: none;">
+        Crash Comunicação
+      </a>
+    </p>
+  </div>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
