@@ -1,18 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-041W8E8Z6S"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-041W8E8Z6S');
-</script>
-
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Pizzaria Del Col - Desde 1987</title>
 <link rel="icon" sizes="32x32" href="logo650x384.png">
@@ -68,9 +57,9 @@ body { font-family: 'Roboto', sans-serif; }
         margin-top: 1.5rem;
     }
 }
-    }
-}
-}
+
+
+
 .navbar-brand, .nav-link { color: white !important; }
 
 .hero {
@@ -219,7 +208,7 @@ body { font-family: 'Roboto', sans-serif; }
 }
 
 .footer {
-  background-color: #1a1a1a;     /* ou a cor escura que você já usa */
+  background-color: #1a3c34;     /* ou a cor escura que você já usa */
   color: #ffffff;
   padding: 2.5rem 1rem;
   border-top: 1px solid #333;    /* opcional: uma linha separadora em cima */
@@ -277,6 +266,66 @@ body { font-family: 'Roboto', sans-serif; }
 }
 
 .icon-green { color: #45A25C; }
+.faixa-rolante {
+    height: 4cm;
+    background-color: #1a3c34;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    position: relative;
+    touch-action: pan-x;
+}
+
+.rolagem {
+    display: flex;
+    animation: rolar-infinito 18s linear infinite;  /* ajuste a velocidade aqui */
+    will-change: transform;
+}
+
+.icone {
+    height: 70%;
+    max-height: 110px;
+    margin: 0 28px;
+    flex-shrink: 0;
+    object-fit: contain;
+}
+
+/* Animação ajustada para 3 cópias → move -33.333% */
+@keyframes rolar-infinito {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-33.333%);
+    }
+}
+
+/* Pausa no hover/toque */
+.faixa-rolante:hover .rolagem,
+.faixa-rolante:active .rolagem {
+    animation-play-state: paused;
+}
+
+/* Mobile: mais rápido e menos margem */
+@media (max-width: 576px) {
+    .faixa-rolante {
+        height: 3.2cm;
+    }
+    .icone {
+        margin: 0 16px;
+        height: 65%;
+        max-height: 90px;
+    }
+    .rolagem {
+        animation-duration: 14s;   /* mais rápido no celular */
+    }
+}
+.faixa-verde-simples {
+    height: 2cm;                    /* metade da altura original (≈ 75-80px) */
+    background-color: #1a3c34;      /* mesmo verde escuro liso */
+    width: 100%;
+    margin: 1.5rem 0;               /* espaçamento suave em cima e embaixo */
+}
 </style>
 </head>
 
@@ -332,6 +381,7 @@ body { font-family: 'Roboto', sans-serif; }
     </div>
 </section>
 
+<div class="faixa-verde-simples"></div>
 <section id="cardapio" class="section-padding bg-light-gray cardapio-watermark">
 <div class="container">
 <h2 class="text-center mb-4">Cardápio</h2>
@@ -490,6 +540,35 @@ body { font-family: 'Roboto', sans-serif; }
     </div>
 </section>
 
+<!-- ==================== FAIXA DE ÍCONES INSERIDA AQUI ==================== -->
+<div class="faixa-rolante">
+    <div class="rolagem">
+        <!-- Conteúdo original -->
+        <img src="icone1.png" alt="Ícone 1" class="icone">
+        <img src="icone2.png" alt="Ícone 2" class="icone">
+        <img src="icone3.png" alt="Ícone 3" class="icone">
+        <img src="icone4.png" alt="Ícone 4" class="icone">
+        <img src="icone5.png" alt="Ícone 5" class="icone">
+        <img src="icone6.png" alt="Ícone 6" class="icone">
+
+        <!-- Duplicata 1 -->
+        <img src="icone1.png" alt="Ícone 1" class="icone">
+        <img src="icone2.png" alt="Ícone 2" class="icone">
+        <img src="icone3.png" alt="Ícone 3" class="icone">
+        <img src="icone4.png" alt="Ícone 4" class="icone">
+        <img src="icone5.png" alt="Ícone 5" class="icone">
+        <img src="icone6.png" alt="Ícone 6" class="icone">
+
+        <!-- Duplicata 2 (garante preenchimento e transição suave) -->
+        <img src="icone1.png" alt="Ícone 1" class="icone">
+        <img src="icone2.png" alt="Ícone 2" class="icone">
+        <img src="icone3.png" alt="Ícone 3" class="icone">
+        <img src="icone4.png" alt="Ícone 4" class="icone">
+        <img src="icone5.png" alt="Ícone 5" class="icone">
+        <img src="icone6.png" alt="Ícone 6" class="icone">
+    </div>
+</div>
+<!-- ==================== FIM DA FAIXA ==================== -->
 
 <section id="local" class="section-padding localizacao-watermark">
 
@@ -546,4 +625,3 @@ body { font-family: 'Roboto', sans-serif; }
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-
