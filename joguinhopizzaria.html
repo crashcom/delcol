@@ -67,7 +67,7 @@
     #chef {
       position: absolute;
       bottom: 0;
-      width: 120px; /* Reduzido em 25% */
+      width: 120px;
       height: auto;
       pointer-events: none;
       z-index: 5;
@@ -126,7 +126,7 @@
   <div id="game-container">
     <div id="score">Score: 0</div>
     <div id="time">Tempo: 45</div>
-    <img id="chef" src="https://i.imgur.com/XJ3WsIG.png" alt="Chef Del Col">
+    <img id="chef" src="bonequinhofinal.png" alt="Chef Del Col">
   </div>
 
   <button id="start-btn">▶️ JOGAR AGORA! ▶️</button>
@@ -145,7 +145,6 @@
     let chefHeight = 0;
     let trayHeight = 65;
 
-    // ALIMENTOS (+PONTOS) E EMOJIS (-PONTOS)
     const items = [
       { emoji: '🥓', points: 5, rarity: 0.15 },
       { emoji: '🧀', points: 4, rarity: 0.15 },
@@ -301,4 +300,4 @@
   </script>
 
 </body>
-</html>
+</html> 
